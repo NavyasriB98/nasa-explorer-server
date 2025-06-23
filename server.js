@@ -4,10 +4,7 @@ const axios = require('axios');
 require('dotenv').config();
 
 const app = express();
-//const PORT = process.env.PORT || 5050;
-const allowedOrigins = [
-  'https://nasa-explorer-client-lake.vercel.app/', // <-- replace with your actual frontend URL
-];
+const PORT = process.env.PORT || 5050;
 
 // NASA API configuration
 const NASA_API_KEY = process.env.NASA_API_KEY || 'DEMO_KEY';
@@ -33,15 +30,9 @@ const limiter = rateLimit({
 app.use(limiter);
 
 // Middleware
-//app.use(cors());
 app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
+  origin: 'https://nasa-explorer-client-lake.vercel.app',
+  credentials: true // if you need cookies/auth, otherwise you can omit this line
 }));
 app.use(express.json());
 
