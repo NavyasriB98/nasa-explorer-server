@@ -236,9 +236,6 @@ app.get('/api/apod/:date?', validateAPIKey, validateDate, asyncHandler(async (re
   }
 }));
 
-const apodRouter = require('./routes/apod');
-app.use('/api/apod', apodRouter);
-
 // 404 handler
 app.use('*', (req, res) => {
   res.status(404).json({
