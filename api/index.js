@@ -1,3 +1,4 @@
+// api/apod.js
 import fetch from 'node-fetch';
 
 export default async function handler(req, res) {
@@ -21,4 +22,4 @@ export default async function handler(req, res) {
     console.error(err);
     res.status(500).json({ error: 'Failed to fetch APOD' });
   }
-} 
+}
