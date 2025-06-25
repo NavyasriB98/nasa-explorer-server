@@ -34,6 +34,7 @@ app.use(cors({
   origin: [
     'https://nasa-explorer-client-lake.vercel.app',
     'https://nasa-explorer-client.vercel.app',
+    'https://frontend-olive-eight-71.vercel.app',
     'http://localhost:3000',
     'http://localhost:3001',
     'http://localhost:5173',
