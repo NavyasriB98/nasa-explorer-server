@@ -236,6 +236,46 @@ app.get('/api/apod/:date?', validateAPIKey, validateDate, asyncHandler(async (re
   }
 }));
 
+// Root route - API documentation and welcome
+app.get('/', (req, res) => {
+  res.json({
+    success: true,
+    message: 'Welcome to NASA APOD Explorer API',
+    version: '1.0.0',
+    endpoints: {
+      root: {
+        method: 'GET',
+        path: '/',
+        description: 'API documentation and welcome message'
+      },
+      health: {
+        method: 'GET',
+        path: '/health',
+        description: 'Health check and server status'
+      },
+      apod: {
+        method: 'GET',
+        path: '/api/apod',
+        description: 'Get today\'s Astronomy Picture of the Day'
+      },
+      apodWithDate: {
+        method: 'GET',
+        path: '/api/apod/:date',
+        description: 'Get APOD for a specific date (YYYY-MM-DD format)',
+        example: '/api/apod/2024-01-15'
+      }
+    },
+    documentation: {
+      dateFormat: 'YYYY-MM-DD',
+      minDate: '1995-06-16',
+      maxDate: 'Today',
+      rateLimit: '100 requests per 15 minutes per IP'
+    },
+    timestamp: new Date().toISOString(),
+    requestId: req.requestId
+  });
+});
+
 // 404 handler
 app.use('*', (req, res) => {
   res.status(404).json({
