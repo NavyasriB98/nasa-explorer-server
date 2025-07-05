@@ -36,8 +36,8 @@ npm start
 bash
 Copy
 Edit
-git clone https://github.com/your-username/nasa-apod-app.git
-cd nasa-apod-app
+git clone https://github.com/NavyasriB98/nasa-explorer-server.git
+cd nasa-explorer-server
 2. Install dependencies
 bash
 Copy
