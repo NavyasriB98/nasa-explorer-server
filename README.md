@@ -31,4 +31,32 @@ NASA_API_KEY=your_nasa_api_key_here
 and in cmd prompt
 npm start
 
+ **Setup Instructions**
+1. Clone the repository
+bash
+Copy
+Edit
+git clone https://github.com/your-username/nasa-apod-app.git
+cd nasa-apod-app
+2. Install dependencies
+bash
+Copy
+Edit
+npm install
+3. Configure Environment Variables
+Create a .env file in the server folder and add:
+
+env
+Copy
+Edit
+PORT=5000
+NASA_API_KEY=your_nasa_api_key_here
+🔑 You can get a free API key from: https://api.nasa.gov
+
+4. Start the app
+bash
+Copy
+Edit
+npm start
+
 
